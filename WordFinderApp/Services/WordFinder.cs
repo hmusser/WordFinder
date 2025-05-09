@@ -42,17 +42,30 @@ namespace WordFinderApp.Services
                                 .Select(keyValuePair => keyValuePair.Key); //Devuelvo la lista.
         }
 
-        public int  CountWordInMatrix(string word)
+        public int CountWordInMatrix(string word)
         {
             var wordLength = word.Length;
             int count = 0;
-            for (int matrixRow = 0; matrixRow < _matrixSize; matrixRow++)
+            for (int currentRow = 0; currentRow < _matrixSize; currentRow++)
             {
-                for (int matrixColumn = 0; matrixColumn < _matrixSize; matrixColumn++)
+                for (int currentColumn = 0; currentColumn < _matrixSize; currentColumn++)
                 {
-                    if()
+                  //  if (currentColumn <= _matrixSize - wordLength && IsThereHorizontalMatch(currentRow, currentColumn, word)) count++;
+                  //  if (currentRow <= _matrixSize - wordLength && && IsThereVerticalMatch(currentRow, currentColumn, word)) count++;
                 }
             }
+            return count;
         }
+
+        public bool IsThereHoriazontalMatch(int row, int column, string word)
+        {
+            for(int i = 0; i < word.Length; i++ )
+            {
+                //if (CharsEqual(_matrix[row, column + i], word[i])) return false;
+            }
+            return true;
+        }
+
+
     }
 }
