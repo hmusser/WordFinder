@@ -21,7 +21,7 @@ namespace WordFinderApplication.Tests
 
             var wordStream = new List<string> { "COLD" };
 
-            var result = wordFinder.Find(wordStream);
+            var result = wordFinder.Find(wordStream, 10);
 
             result.Should().ContainSingle().Which.Should().Be("COLD");
         }
