@@ -22,11 +22,11 @@ namespace WordFinderApp.Services
         public IEnumerable<string> Find(IEnumerable<string> wordStream, int numberRankingPositions)
         {
             if (wordStream == null) throw new ArgumentNullException(nameof(wordStream));
-            var wordFrequency = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);//Case-Insensitive.
+            var wordFrequency = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
             var uniqueWords = wordStream
                           .Where(word => !string.IsNullOrWhiteSpace(word))
-                          .Select(word => word.ToUpperInvariant())//Normalized
-                          .Distinct();//Avoid duplicated words
+                          .Select(word => word.ToUpperInvariant())
+                          .Distinct();
 
             foreach (var word in uniqueWords)
             {
