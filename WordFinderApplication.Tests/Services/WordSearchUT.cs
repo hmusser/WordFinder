@@ -116,7 +116,7 @@ namespace WordFinderApplication.Tests.Services
         ];
         public static string[] GenerateLargeWordStreamWords()
         {
-            var list = Enumerable.Repeat("challenge", 100000).ToList();
+            var list = Enumerable.Repeat("challenge", 200000).ToList();
             list.Add("chill");
             return [.. list];
         }
